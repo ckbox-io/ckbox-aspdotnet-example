@@ -1,0 +1,29 @@
+@page
+@model AspdotnetCkbox.Pages.filePicker
+
+@{
+    Layout = "Shared/_Layout";
+    var tokenUrl = $"{HttpContext.Request.Scheme}://{HttpContext.Request.Host}/token";
+}
+
+<div>
+    <input type="text" id="file-url"></input><button id="choose">Choose file</button>
+        <div id="ckbox"></div>
+        <script>
+            document.getElementById('choose').addEventListener('click', function () {
+                CKBox.mount(document.querySelector('#ckbox'), {
+                    tokenUrl: '@tokenUrl',
+                    dialog: true,
+                    assets: {
+                        // Callback executed after choosing assets
+                        onChoose: (assets) => {
+                            document.getElementById('file-url').value = assets[0].data.url;
+                            assets.forEach((asset) => {
+                                console.log(asset.data.url);
+                            })
+                        }
+                    }
+                });
+            });
+        </script>
+</div>

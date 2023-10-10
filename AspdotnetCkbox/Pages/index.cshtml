@@ -1,0 +1,31 @@
+@page
+@model AspdotnetCkbox.Pages.index
+
+@{
+    Layout = "Shared/_Layout";
+    var tokenUrl = $"{HttpContext.Request.Scheme}://{HttpContext.Request.Host}/token";
+}
+
+@section Head {
+    <script src="https://cdn.ckeditor.com/ckeditor5/39.0.2/classic/ckeditor.js"></script>
+}
+<div>
+    <textarea id="editor">@Html.Raw("Hello world")</textarea>
+        <script>
+            ClassicEditor
+                .create( document.querySelector( '#editor' ), {
+                    ckbox: {
+                        tokenUrl: '@tokenUrl',
+                        theme: 'lark'
+                    },
+                    toolbar: [
+                        'ckbox', 'imageUpload', '|', 'heading', '|', 'undo', 'redo', '|', 'bold', 'italic', '|',
+                        'blockQuote', 'indent', 'link', '|', 'bulletedList', 'numberedList'
+                    ],
+                } )
+                .catch( error => {
+                    console.error( error );
+                } );
+        </script>
+</div>
+

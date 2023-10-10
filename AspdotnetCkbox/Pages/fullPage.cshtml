@@ -1,0 +1,25 @@
+@page
+@model AspdotnetCkbox.Pages.fullPage
+
+@{
+    Layout = "Shared/_Layout";
+    var tokenUrl = $"{HttpContext.Request.Scheme}://{HttpContext.Request.Host}/token";
+}
+
+@section Head {
+    <style>
+            html, body {
+                margin: 0;
+                padding: 0;
+                height: 100vh;
+            }
+    </style>
+}
+
+<div>
+    <script>
+        CKBox.mount(document.body, {
+            tokenUrl: '@tokenUrl',
+        });
+    </script>
+</div>
