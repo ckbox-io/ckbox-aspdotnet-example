@@ -14,9 +14,8 @@ To run this example you will need access credentials required to connect to the 
 3. Add access credentials to the `appsettings.json` file.
 
    ```
-   # appsettings.json
-  "CKBoxAccessKey": "REPLACE-WITH-ACCESS-KEY",
-  "CKBoxEnvironmentId": "REPLACE-WITH-ENVIRONMENT-ID",
+   "CKBoxAccessKey": "REPLACE-WITH-ACCESS-KEY",
+   "CKBoxEnvironmentId\": "REPLACE-WITH-ENVIRONMENT-ID",
    ```
 
 4. Run the application.
