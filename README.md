@@ -15,7 +15,7 @@ To run this example you will need access credentials required to connect to the 
 
    ```
    "CKBoxAccessKey": "REPLACE-WITH-ACCESS-KEY",
-   "CKBoxEnvironmentId\": "REPLACE-WITH-ENVIRONMENT-ID",
+   "CKBoxEnvironmentId": "REPLACE-WITH-ENVIRONMENT-ID",
    ```
 
 4. Run the application.
